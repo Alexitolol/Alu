@@ -66,35 +66,7 @@ void loop() {
       Serial.println("Error: División por 0");
     }
   }
-  else if (EstadoW == 0 && EstadoX == 1 && EstadoY == 0 && EstadoZ == 1) {
-    resultado = EstadoA & EstadoB;
-    Serial.println("AND");
-  }
-  else if (EstadoW == 0 && EstadoX == 1 && EstadoY == 1 && EstadoZ == 0) {
-    resultado = EstadoA | EstadoB;
-    Serial.println("OR");
-  }
-  else if (EstadoW == 0 && EstadoX == 1 && EstadoY == 1 && EstadoZ == 1) {
-    resultado = !EstadoA;
-    Serial.println("NOT");
-  }
-  else if (EstadoW == 1 && EstadoX == 0 && EstadoY == 0 && EstadoZ == 0) {
-    resultado = EstadoA ^ EstadoB;
-    Serial.println("XOR");
-  }
-  else if (EstadoW == 1 && EstadoX == 0 && EstadoY == 0 && EstadoZ == 1) {
-    resultado = !(EstadoA ^ EstadoB);
-    Serial.println("XNOR");
-  }
-  else if (EstadoW == 1 && EstadoX == 0 && EstadoY == 1 && EstadoZ == 0) {
-    resultado = !(EstadoA & EstadoB);
-    Serial.println("NAND");
-  }
-  else if (EstadoW == 1 && EstadoX == 0 && EstadoY == 1 && EstadoZ == 1) {
-    resultado = !(EstadoA | EstadoB);
-    Serial.println("NOR");
-  }
-
+ 
   if (!negativo && !indeterminado) {
     digitalWrite(12, resultado);
     digitalWrite(13, acarreo);
